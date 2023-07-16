@@ -1,6 +1,6 @@
 import { Button, Col, Form, Modal, Row, Stack } from "react-bootstrap"
 import { Tag } from "../App"
-import { Dispatch, useState } from "react"
+import { Dispatch } from "react"
 
 export type EditTagsModalProps = {
     availableTags : Tag[],

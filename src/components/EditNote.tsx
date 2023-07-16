@@ -1,6 +1,6 @@
 import { Dispatch } from "react"
 import { NoteData, Tag } from "../App"
-import NoteForm, { NoteFormProps } from "./NoteForm"
+import NoteForm from "./NoteForm"
 import { useNote } from "./NotesLayout"
 
 export type EditNoteProps = {
