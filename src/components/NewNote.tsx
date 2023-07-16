@@ -1,10 +1,12 @@
-import NoteForm from "./NoteForm"
+import { NoteData } from "../App";
+import NoteForm, { NoteFormProps } from "./NoteForm"
 
-const NewNote = () => {
+const NewNote = ({onSubmit, setTagInLocalStorage, availableTags}: NoteFormProps) => {
+    document.title = "Create a new note";
     return (
         <>
-            <h1>New Note</h1>
-            <NoteForm />
+            <h1>Create Note</h1>
+            <NoteForm onSubmit={onSubmit} setTagInLocalStorage={setTagInLocalStorage} availableTags={availableTags}/>
         </>
     )
 }
