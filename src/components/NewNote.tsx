@@ -1,4 +1,3 @@
-import { NoteData } from "../App";
 import NoteForm, { NoteFormProps } from "./NoteForm"
 
 const NewNote = ({onSubmit, setTagInLocalStorage, availableTags}: NoteFormProps) => {
