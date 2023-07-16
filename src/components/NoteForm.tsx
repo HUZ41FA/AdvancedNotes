@@ -11,17 +11,19 @@ export type NoteFormProps = {
     availableTags : Tag[]
 } & Partial<NoteData>
 
-const NoteForm = ({onSubmit, setTagInLocalStorage, availableTags, title="", markdown="", tags=[]}: NoteFormProps) => {
+const NoteForm = ({onSubmit, setTagInLocalStorage, availableTags, title="", markdown="", tags=[], color="#ffffff"}: NoteFormProps) => {
     const navigate = useNavigate();
     const [selectedTags, setSelectedTags] = useState<Tag[]>(tags)
     const titleRef = useRef<HTMLInputElement>(null);
     const markdownRef = useRef<HTMLTextAreaElement>(null);
+    const colorRef = useRef<HTMLInputElement>(null);
 
     const handleSubmit = (event : FormEvent) => {
         event.preventDefault();
         onSubmit({
             title: titleRef.current!.value,
             markdown : markdownRef.current!.value,
+            color : colorRef.current!.value,
             tags : selectedTags
         })
         navigate("/");
@@ -75,6 +77,16 @@ const NoteForm = ({onSubmit, setTagInLocalStorage, availableTags, title="", mark
                                     }    
                                     isMulti />
                             </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group controlId="color">
+                                <Form.Label>Note Color</Form.Label>
+                                <Form.Control 
+                                    defaultValue={color}
+                                    ref={colorRef}
+                                    type="color"
+                                ></Form.Control>
+                            </Form.Group>     
                         </Col>
                     </Row>
                     <Row>

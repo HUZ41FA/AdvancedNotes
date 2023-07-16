@@ -15,7 +15,7 @@ const EditNote = ({onSubmit, setTagInLocalStorage, availableTags}: EditNoteProps
     return (
         <>
             <h1>Editing Note</h1>
-            <NoteForm title={note.title} tags={note.tags} markdown={note.markdown} onSubmit={data=>onSubmit(note.id, data)} setTagInLocalStorage={setTagInLocalStorage} availableTags={availableTags}/>
+            <NoteForm title={note.title} tags={note.tags} markdown={note.markdown} color={note.color} onSubmit={data=>onSubmit(note.id, data)} setTagInLocalStorage={setTagInLocalStorage} availableTags={availableTags}/>
         </>
     ) 
 }

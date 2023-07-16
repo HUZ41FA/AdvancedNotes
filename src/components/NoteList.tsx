@@ -10,6 +10,7 @@ export type SimplifiedNote = {
     id : string,
     title : string,
     tags : Tag[],
+    color : string
 }
 
 export type NoteListProps = {
@@ -95,7 +96,7 @@ const NoteList = ({notes, availableTags, onUpdateTag, showModal, setShowModal, o
             {
                 filteredNotes.map(note => {
                     return <Col key={note.id}>
-                        <NoteCard id={note.id} title={note.title} tags={note.tags}/>
+                        <NoteCard id={note.id} title={note.title} tags={note.tags} color={note.color}/>
                     </Col>
                 })
             }                      
@@ -108,10 +109,10 @@ const NoteList = ({notes, availableTags, onUpdateTag, showModal, setShowModal, o
 
 export default NoteList;
 
-const NoteCard = ({id, title, tags}: SimplifiedNote) => {
+const NoteCard = ({id, title, tags, color}: SimplifiedNote) => {
     return (
         <>
-        <Card as={Link} to={`/${id}`} className={`h-100 text-reset text-decoration-none card`}>
+        <Card as={Link} to={`/${id}`} className={`h-100 text-reset text-decoration-none card`} style={{"backgroundColor": `${color}`}}>
             <Card.Body>
                 <Stack className="align-items-center justify-content-center h-100">
                     <h2 className="text-center">{title}</h2>

@@ -17,6 +17,7 @@ export type Note = {
 export type NoteData = {
   title : string,
   markdown : string,
+  color : string,
   tags : Tag[]
 }
 
@@ -32,6 +33,7 @@ export type RawNote = {
 export type RawNoteData = {
   title : string,
   markdown : string,
+  color : string,
   tagIds : string[]
 }
 
