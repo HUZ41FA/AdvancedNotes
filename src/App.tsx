@@ -57,7 +57,8 @@ function App() {
   }
 
   function onUpdateNote(id: string, {tags, ...data}: NoteData){
-    setTags(prevNotes => {
+    debugger;
+    setNotes(prevNotes => {
       return prevNotes.map(note => {
         if(note.id === id){
           return {...note, ...data, tagIds : tags.map(tag => tag.id)}

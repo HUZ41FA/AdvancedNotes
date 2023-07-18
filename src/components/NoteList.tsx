@@ -95,7 +95,7 @@ const NoteList = ({notes, availableTags, onUpdateTag, showModal, setShowModal, o
         <Row xs={1} sm={2} lg={3} xl={4} gap={3}>
             {
                 filteredNotes.map(note => {
-                    return <Col key={note.id}>
+                    return <Col key={note.id} className="mb-3">
                         <NoteCard id={note.id} title={note.title} tags={note.tags} color={note.color}/>
                     </Col>
                 })
