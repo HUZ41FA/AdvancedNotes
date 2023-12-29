@@ -44,12 +44,12 @@ const NoteList = ({notes, availableTags, onUpdateTag, showModal, setShowModal, o
     <>
         <Row className="align-items-center mb-4">
             <Col>
-                <h1>Notes</h1>
+                <h1>Advanced Notes</h1>
             </Col>
             <Col xs="auto"> 
                 <Stack gap={2} direction="horizontal">
                     <Link to="/new">
-                        <Button variant="info">Create New</Button>
+                        <Button variant="info" className='text-light'>Create New</Button>
                     </Link>
                     <Button variant="secondary" onClick={()=>setShowModal(true)}>Edit Tag</Button>
                 </Stack>
